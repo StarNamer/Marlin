@@ -181,10 +181,10 @@ void lcd_control_temperature_menu();
 void lcd_control_motion_menu();
 #endif
 
-#if ENABLED(MENU_PREHEAT_PLA)
+#if ENABLED(PREHEAT_M1_MENU)
 void lcd_control_temperature_preheat_material1_settings_menu();
 #endif
-#if ENABLED(MENU_PREHEAT_ABS)
+#if ENABLED(PREHEAT_M2_MENU)
 void lcd_control_temperature_preheat_material2_settings_menu();
 #endif
 
@@ -1711,7 +1711,7 @@ void lcd_preheat_m2_bedonly() { _lcd_preheat(0, 0, lcd_preheat_bed_temp[1], lcd_
 #endif
 
 #if HAS_TEMP_HOTEND || HAS_HEATED_BED
-#if ENABLED(MENU_PREHEAT_PLA)
+#if ENABLED(PREHEAT_M1_MENU)
 void lcd_preheat_m1_menu() {
     START_MENU();
     MENU_BACK(MSG_PREPARE);
@@ -1765,7 +1765,7 @@ void lcd_preheat_m1_menu() {
 }
 #endif
 
-#if ENABLED(MENU_PREHEAT_ABS)
+#if ENABLED(PREHEAT_M2_MENU)
 void lcd_preheat_m2_menu() {
     START_MENU();
     MENU_BACK(MSG_PREPARE);
@@ -2802,17 +2802,17 @@ void lcd_prepare_menu() {
     // Preheat for Material 1 and 2
     //
 #if TEMP_SENSOR_1 != 0 || TEMP_SENSOR_2 != 0 || TEMP_SENSOR_3 != 0 || TEMP_SENSOR_4 != 0 || HAS_HEATED_BED
-#if ENABLED(MENU_PREHEAT_PLA)
+#if ENABLED(PREHEAT_M1_MENU)
     MENU_ITEM(submenu, MSG_PREHEAT_1, lcd_preheat_m1_menu);
 #endif
-#if ENABLED(MENU_PREHEAT_ABS)
+#if ENABLED(PREHEAT_M2_MENU)
     MENU_ITEM(submenu, MSG_PREHEAT_2, lcd_preheat_m2_menu);
 #endif
 #else
-#if ENABLED(MENU_PREHEAT_PLA)
+#if ENABLED(PREHEAT_M1_MENU)
     MENU_ITEM(function, MSG_PREHEAT_1, lcd_preheat_m1_e0_only);
 #endif
-#if ENABLED(MENU_PREHEAT_ABS)
+#if ENABLED(PREHEAT_M2_MENU)
     MENU_ITEM(function, MSG_PREHEAT_2, lcd_preheat_m2_e0_only);
 #endif
 #endif
@@ -3628,20 +3628,20 @@ void lcd_control_temperature_menu() {
     //
     // Preheat Material 1 conf
     //
-#if ENABLED(MENU_PREHEAT_PLA)
+#if ENABLED(PREHEAT_M1_MENU)
     MENU_ITEM(submenu, MSG_PREHEAT_1_SETTINGS, lcd_control_temperature_preheat_material1_settings_menu);
 #endif
     //
     // Preheat Material 2 conf
     //
-#if ENABLED(MENU_PREHEAT_ABS)
+#if ENABLED(PREHEAT_M2_MENU)
     MENU_ITEM(submenu, MSG_PREHEAT_2_SETTINGS, lcd_control_temperature_preheat_material2_settings_menu);
 #endif
 
     END_MENU();
 }
 
-#if ENABLED(MENU_PREHEAT_PLA) || ENABLED(MENU_PREHEAT_ABS)
+#if ENABLED(PREHEAT_M1_MENU) || ENABLED(PREHEAT_M2_MENU)
 
 void _lcd_control_temperature_preheat_settings_menu(const uint8_t material) {
 #if HOTENDS > 4
@@ -3680,7 +3680,7 @@ void _lcd_control_temperature_preheat_settings_menu(const uint8_t material) {
  * "Temperature" > "Preheat Material 1 conf" submenu
  *
  */
-#if ENABLED(MENU_PREHEAT_PLA)
+#if ENABLED(PREHEAT_M1_MENU)
 void lcd_control_temperature_preheat_material1_settings_menu() { _lcd_control_temperature_preheat_settings_menu(0); }
 #endif
 /**
@@ -3688,7 +3688,7 @@ void lcd_control_temperature_preheat_material1_settings_menu() { _lcd_control_te
  * "Temperature" > "Preheat Material 2 conf" submenu
  *
  */
-#if ENABLED(MENU_PREHEAT_ABS)
+#if ENABLED(PREHEAT_M2_MENU)
 void lcd_control_temperature_preheat_material2_settings_menu() { _lcd_control_temperature_preheat_settings_menu(1); }
 #endif
 

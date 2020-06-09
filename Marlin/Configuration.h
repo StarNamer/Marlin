@@ -1265,7 +1265,7 @@
 
 // @section temperature
 
-#define MENU_PREHEAT_PLA
+#define PREHEAT_M1_MENU
 //#define MNEU_PREHEAT_ABS
 
 
