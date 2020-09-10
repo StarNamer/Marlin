@@ -686,7 +686,7 @@
    * differs, a mode set eeprom write will be completed at initialization.
    * Use the option below to force an eeprom write to a V3.1 probe regardless.
    */
-  //#define BLTOUCH_SET_5V_MODE
+  #define BLTOUCH_SET_5V_MODE
 
   /**
    * Safety: Activate if connecting a probe with an unknown voltage mode.
@@ -1061,6 +1061,9 @@
   // BACK menu items keep the highlight at the top
   //#define TURBO_BACK_MENU_ITEM
 
+  // Add extra notifications so BigTreeTech Touchscreen get M117 messages and fan speed updates
+  #define BTT_TOUCHSCREEN
+
   /**
    * LED Control Menu
    * Add LED Control to the LCD menu
@@ -1104,10 +1107,13 @@
 // Show the E position (filament used) during printing
 #define LCD_SHOW_E_TOTAL
 
+<<<<<<< Updated upstream
 // Announce status and/or fan speed for certain serial touch screens (BTT)
 #define LCD_ANNOUNCE_STATUS
 #define LCD_ANNOUNCE_FAN
 
+=======
+>>>>>>> Stashed changes
 #if ENABLED(SHOW_BOOTSCREEN)
   #define BOOTSCREEN_TIMEOUT 4000        // (ms) Total Duration to display the boot screen(s)
 #endif
@@ -1628,8 +1634,13 @@
 #define LIN_ADVANCE
 #if ENABLED(LIN_ADVANCE)
   //#define EXTRA_LIN_ADVANCE_K // Enable for second linear advance constants
+<<<<<<< HEAD
   #define LIN_ADVANCE_K 0.22    // Unit: mm compression per 1mm/s extruder speed
   #define LA_DEBUG            // If enabled, this will generate debug information output over USB.
+=======
+  #define LIN_ADVANCE_K 0.0    // Unit: mm compression per 1mm/s extruder speed
+  //#define LA_DEBUG            // If enabled, this will generate debug information output over USB.
+>>>>>>> 7cb5ae5ea... Ender-3 mods - Temporarilty remove PID hotend values
   #define EXPERIMENTAL_SCURVE   // Enable this option to permit S-Curve Acceleration
 #endif
 
@@ -3137,6 +3148,13 @@
 //#define M114_LEGACY         // M114 used to synchronize on every call. Enable if needed.
 
 #define REPORT_FAN_CHANGE   // Report the new fan speed when changed by M106 (and others)
+<<<<<<< HEAD
+=======
+
+#if defined(BTT_TOUCHSCREEN)
+#define REPORT_FAN_CHANGE   // Report the new fan speed when changed by M106 (and others)
+#endif
+>>>>>>> 7cb5ae5ea... Ender-3 mods - Temporarilty remove PID hotend values
 
 /**
  * Set the number of proportional font spaces required to fill up a typical character space.
