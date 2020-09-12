@@ -686,7 +686,7 @@
    * differs, a mode set eeprom write will be completed at initialization.
    * Use the option below to force an eeprom write to a V3.1 probe regardless.
    */
-  #define BLTOUCH_SET_5V_MODE
+  //#define BLTOUCH_SET_5V_MODE
 
   /**
    * Safety: Activate if connecting a probe with an unknown voltage mode.
@@ -1060,9 +1060,6 @@
 
   // BACK menu items keep the highlight at the top
   //#define TURBO_BACK_MENU_ITEM
-
-  // Add extra notifications so BigTreeTech Touchscreen get M117 messages and fan speed updates
-  #define BTT_TOUCHSCREEN
 
   /**
    * LED Control Menu
@@ -1632,7 +1629,7 @@
 #if ENABLED(LIN_ADVANCE)
   //#define EXTRA_LIN_ADVANCE_K // Enable for second linear advance constants
   #define LIN_ADVANCE_K 0.0    // Unit: mm compression per 1mm/s extruder speed
-  //#define LA_DEBUG            // If enabled, this will generate debug information output over USB.
+  #define LA_DEBUG            // If enabled, this will generate debug information output over USB.
   #define EXPERIMENTAL_SCURVE   // Enable this option to permit S-Curve Acceleration
 #endif
 
@@ -3140,10 +3137,6 @@
 //#define M114_LEGACY         // M114 used to synchronize on every call. Enable if needed.
 
 #define REPORT_FAN_CHANGE   // Report the new fan speed when changed by M106 (and others)
-
-#if defined(BTT_TOUCHSCREEN)
-#define REPORT_FAN_CHANGE   // Report the new fan speed when changed by M106 (and others)
-#endif
 
 /**
  * Set the number of proportional font spaces required to fill up a typical character space.
