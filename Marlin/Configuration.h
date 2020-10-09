@@ -72,7 +72,7 @@
 
 // @section info
 
-#define SHORT_BUILD_VERSION "2.0.x-0918-5-LA0.22"
+#define SHORT_BUILD_VERSION "2.0.x-0928-5-LA0.40"
 
 // Author info of this build printed to the host during boot and M115
 #define STRING_CONFIG_H_AUTHOR "(StarNamer, Ender-3)" // Who made the changes.
