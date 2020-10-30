@@ -72,7 +72,7 @@
 
 // @section info
 
-#define SHORT_BUILD_VERSION "2.0.x-0928-5-LA0.40"
+#define SHORT_BUILD_VERSION "2.0.x-1030-5-LA0.40"
 
 // Author info of this build printed to the host during boot and M115
 #define STRING_CONFIG_H_AUTHOR "(StarNamer, Ender-3)" // Who made the changes.
@@ -497,16 +497,9 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.0 }
     #define DEFAULT_Kd_LIST { 114.00, 112.0 }
   #else
-  // Creality Ender-3
-  // #define DEFAULT_Kp 21.73
-  // #define DEFAULT_Ki 1.54
-  // #define DEFAULT_Kd 76.55
-
-  
   #define DEFAULT_Kp 32.33
   #define DEFAULT_Ki 3.42
   #define DEFAULT_Kd 76.46
-
   #endif
 #endif // PIDTEMP
 
@@ -1522,14 +1515,14 @@
 
 // Preheat Constants
 #define PREHEAT_1_LABEL       "PLA"
-#define PREHEAT_1_TEMP_HOTEND 185
-#define PREHEAT_1_TEMP_BED     45
-#define PREHEAT_1_FAN_SPEED   255 // Value from 0 to 255
+#define PREHEAT_1_TEMP_HOTEND 210
+#define PREHEAT_1_TEMP_BED     60
+#define PREHEAT_1_FAN_SPEED   0 // Value from 0 to 255
 
 #define PREHEAT_2_LABEL       "ABS"
 #define PREHEAT_2_TEMP_HOTEND 240
 #define PREHEAT_2_TEMP_BED    110
-#define PREHEAT_2_FAN_SPEED   255 // Value from 0 to 255
+#define PREHEAT_2_FAN_SPEED   192 // Value from 0 to 255
 
 /**
  * Nozzle Park
