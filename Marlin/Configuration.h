@@ -71,7 +71,7 @@
 
 // @section info
 
-#define SHORT_BUILD_VERSION "2.0.x-1030-5-LA0.40"
+#define SHORT_BUILD_VERSION "2.0.x-BL5-LA0.40"
 
 // Author info of this build printed to the host during boot and M115
 #define STRING_CONFIG_H_AUTHOR "(StarNamer, Ender-3)" // Who made the changes.
@@ -507,9 +507,12 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-  #define DEFAULT_Kp 32.33
-  #define DEFAULT_Ki 3.42
-  #define DEFAULT_Kd 76.46
+  // #define DEFAULT_Kp 32.33
+  // #define DEFAULT_Ki 3.42
+  // #define DEFAULT_Kd 76.46
+  #define DEFAULT_Kp 34.55
+  #define DEFAULT_Ki 3.65
+  #define DEFAULT_Kd 81.71
   #endif
 #endif // PIDTEMP
 
@@ -552,14 +555,31 @@
   // #define DEFAULT_bedKi .023
   // #define DEFAULT_bedKd 305.4
 
+  // FIND YOUR OWN: "M303 E-1 C10 S60" to run autotune on the bed at 60 degreesC for 10 cycles.
+  // #define DEFAULT_bedKp 67.16
+  // #define DEFAULT_bedKi 12.50
+  // #define DEFAULT_bedKd 240.51
+  //
+  #define DEFAULT_bedKp 64.00
+  #define DEFAULT_bedKi 12.28
+  #define DEFAULT_bedKd 222.35
+  // FIND YOUR OWN: "M303 E-1 C8 S70" to run autotune on the bed at 70 degreesC for 8 cycles.
+  // #define DEFAULT_bedKp 74.81
+  // #define DEFAULT_bedKi 11.81
+  // #define DEFAULT_bedKd 315.87
+  //
+  // #define DEFAULT_bedKp 30.36
+  // #define DEFAULT_bedKi 5.41
+  // #define DEFAULT_bedKd 113.57
+  //
+  // #define DEFAULT_bedKp 46.11
+  // #define DEFAULT_bedKi 8.46
+  // #define DEFAULT_bedKd 167.59
+  // //
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
-  // #define DEFAULT_bedKp 50.71
-  // #define DEFAULT_bedKi 9.88
-  // #define DEFAULT_bedKd 173.43
-
-  #define DEFAULT_bedKp 26.01
-  #define DEFAULT_bedKi 5.07
-  #define DEFAULT_bedKd 88.9
+  // #define DEFAULT_bedKp 139.94
+  // #define DEFAULT_bedKi 27.28
+  // #define DEFAULT_bedKd 478.65
 #endif // PIDTEMPBED
 
 #if EITHER(PIDTEMP, PIDTEMPBED)
